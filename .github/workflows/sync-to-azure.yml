@@ -20,4 +20,4 @@ jobs:
           git remote add azure https://WiseOldOwl@dev.azure.com/WiseOldOwl/landing_Zone/_git/Azure.git
           git push azure main -f
         env:
-          AZURE_DEVOPS_PAT: ${{ secrets.AZURE_DEVOPS_PAT }}
+          AZURE_DEVOPS_PAT: ${{ secrets.PERSONALACCESSTOKEN }}
