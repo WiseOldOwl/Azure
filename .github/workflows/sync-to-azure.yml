@@ -3,21 +3,25 @@ name: Sync to Azure DevOps
 on:
   push:
     branches:
-      - main
+      - main  # Adjust for the branch you want to sync
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Check out the GitHub repository
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
 
-      - name: Push changes to Azure DevOps
+      # Step 2: Configure Git user details
+      - name: Set up Git user
         run: |
           git config --global user.email "imranmungul@gmail.com"
           git config --global user.name "WiseOldOwl"
-          git remote add azure https://$AZURE_DEVOPS_PAT@dev.azure.com/WiseOldOwl/landing_Zone/_git/Azure
+
+      # Step 3: Add Azure DevOps as a remote with PAT-based authentication
+      - name: Add Azure DevOps remote and push changes
+        run: |
+          git remote add azure https://user:${{ secrets.AZURE_DEVOPS_PAT }}@dev.azure.com/WiseOldOwl/landing_Zone/_git/Azure
           git push azure main -f
-        env:
-          AZURE_DEVOPS_PAT: ${{ secrets.AZURE_DEVOPS_PAT }}
