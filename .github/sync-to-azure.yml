@@ -13,7 +13,6 @@ jobs:
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
 
-      # Step 2: Configure the Azure DevOps remote and push changes
       - name: Push changes to Azure DevOps
         run: |
           git config --global user.email "imranmungul@gmail.com"
