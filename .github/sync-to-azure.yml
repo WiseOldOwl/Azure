@@ -1,0 +1,25 @@
+name: Sync to Azure DevOps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v2
+
+      # Step 2: Configure the Azure DevOps remote and push changes
+      - name: Push changes to Azure DevOps
+        run: |
+          git config --global user.email "imranmungul@gmail.com"
+          git config --global user.name "WiseOldOwl"
+          git remote add azure https://WiseOldOwl@dev.azure.com/WiseOldOwl/landing_Zone/_git/Azure.git
+          
+          git push azure main -f
+        env:
+          AZURE_DEVOPS_PAT: ${{ secrets.AZURE_DEVOPS_PAT }}  # Secret PAT added in GitHub secrets
