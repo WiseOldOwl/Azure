@@ -9,18 +9,18 @@
             "value": "Subnet1"
         },
         "virtualNetworkResourceGroup": {
-            "value": "rg-vnet-wotlab01"
+            "value": "rg-vnet-woolab01"
         },
         "virtualMachineName": {
             "value": "WinServ"
         },
         "virtualNetworkName": {
-            "value": "hub-vnet-wotlab01"
+            "value": "hub-vnet-woolab01"
         },
         "AdminPassword": {
             "reference": {
                 "keyVault": {
-                "id": "/subscriptions/d9d2ecd3-56a0-4f15-bae9-04b37c0d4335/resourceGroups/rg-kv-wotlab01/providers/Microsoft.KeyVault/vaults/kv-uks-wotlab01"
+                "id": "/subscriptions/d9d2ecd3-56a0-4f15-bae9-04b37c0d4335/resourceGroups/rg-kv-woolab01/providers/Microsoft.KeyVault/vaults/kv-uks-woolab01"
                 },
                 "secretName": "AdminAccountPassword"
             }

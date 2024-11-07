@@ -19,7 +19,7 @@
   "variables": {
     "namingConvention": {
       "snPrefix": "sn-",
-      "forceID": "wot-",
+      "forceID": "woo-",
       "vnPrefix": "vn-",
       "nsgPrefix": "nsg-",
       "region": "-uks",

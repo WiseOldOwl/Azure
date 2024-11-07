@@ -13,7 +13,7 @@
     "namingConvention": {
       "snPrefix": "sn-",
       "region": "uks",
-      "forceID": "wot-",
+      "forceID": "woo-",
       "nsgPrefix": "nsg-"
     },
     "nsgName": "[concat(variables('namingConvention').nsgPrefix, variables('namingConvention').forceID, variables('namingConvention').region)]"

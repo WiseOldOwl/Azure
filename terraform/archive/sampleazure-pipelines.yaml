@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - group: WiseOldTurtleSP  # Variable group where secrets are stored
+  - group: WiseOldOwlSP  # Variable group where secrets are stored
 
 stages:
   - stage: Build
@@ -51,7 +51,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'wiseoldturtle-terraform-sp'
+              backendServiceArm: 'wiseoldOwl-terraform-sp'
               backendAzureRmResourceGroupName: 'tfstate'
               backendAzureRmStorageAccountName: 'terraformstate01'
               backendAzureRmContainerName: 'tfstate'
@@ -63,7 +63,7 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               commandOptions: '-out $(Build.SourcesDirectory)/tfplanfile'
-              environmentServiceNameAzureRM: 'wiseoldturtle-terraform-sp'
+              environmentServiceNameAzureRM: 'wiseoldOwl-terraform-sp'
 
           - task: CopyFiles@2
             displayName: 'Copy Files to Staging'

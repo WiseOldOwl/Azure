@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
       resource_group_name  = "tfstate"
-      storage_account_name = "terraformstateprojwot1"
+      storage_account_name = "terraformstateprojwoo1"
       container_name       = "tfstate"
       key                  = "security.tfstate"
   }
@@ -17,7 +17,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg-nsg-wotlab01" {
+resource "azurerm_resource_group" "rg-nsg-woolab01" {
   name     = var.resource_group_name
   location = var.location
 }
@@ -29,7 +29,7 @@ resource "azurerm_network_security_group" "frontend_nsg" {
 
   # added dependency on the resource group so it does not crash
   depends_on = [
-    azurerm_resource_group.rg-nsg-wotlab01
+    azurerm_resource_group.rg-nsg-woolab01
   ]
 
   # Deny all inbound traffic except VNET internal traffic

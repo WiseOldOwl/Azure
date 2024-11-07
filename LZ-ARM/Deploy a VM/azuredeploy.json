@@ -50,11 +50,11 @@
         "imageOffer" :  "WindowsServer",
         "imageSku" : "2012-R2-Datacenter-smalldisk",
         "publisher": "MicrosoftWindowsServer",
-        "diagnosticsStorageAccountName" : "wiseoldturtlestorage01",
-        "diagnosticsStorageAccountResourceGroup": "rg-store-wotlab01",
+        "diagnosticsStorageAccountName" : "wiseoldOwlstorage01",
+        "diagnosticsStorageAccountResourceGroup": "rg-store-woolab01",
         "virtualMachineDiskType" : "Standard_LRS",
         "virtualMachineSize": "Standard_B1s",
-        "AdminUsername" : "wiseoldturtle"
+        "AdminUsername" : "wiseoldOwl"
     },
 
 // these are lists of all the API's you xcan simply replace one of the variables in "apiVersion" and it will provide you with the latest API when deploying that resource.

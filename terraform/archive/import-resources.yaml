@@ -6,7 +6,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - group: WiseOldTurtleSP  # Variable group containing SP details
+  - group: WiseOldOwlSP  # Variable group containing SP details
   - group: terraform        # Variable group containing Terraform-related variables
   - name: TF_VARS_subscription_id
     value: $(TF_VARS_subscription_id)  # Reference the variable from the Azure DevOps variable group
@@ -45,7 +45,7 @@ steps:
 
 # Import Resource Groups into Terraform State
 - script: |
-      declare -a rgs=("rg-nsg-wotlab01" "rg-vnet-wotlab01" "rg-vmpool-wotlab01" "rg-policy-wotlab01")
+      declare -a rgs=("rg-nsg-woolab01" "rg-vnet-woolab01" "rg-vmpool-woolab01" "rg-policy-woolab01")
       for rg in "${rgs[@]}"; do
           resource_id=$(az group show --name "$rg" --query id --output tsv)
           terraform import azurerm_resource_group.$rg $resource_id

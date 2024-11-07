@@ -22,7 +22,7 @@ jobs:
 
     - name: Add Azure DevOps Remote
       run: |
-        git remote add azure https://$(AZURE_DEVOPS_PAT)@dev.azure.com/WiseOldTurtle/DevOpsLab/_git/AzureLandingZone
+        git remote add azure https://$(AZURE_DEVOPS_PAT)@dev.azure.com/WiseOldOwl/DevOpsLab/_git/AzureLandingZone
 
     - name: Push changes to Azure DevOps
       run: |

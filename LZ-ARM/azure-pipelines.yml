@@ -6,7 +6,7 @@ pool:
 
 variables:
   location: 'uksouth'
-  resourceGroupName: 'rg-vnet-wotlab01'
+  resourceGroupName: 'rg-vnet-woolab01'
   armTemplateFile: 'LZ-ARM/DeployNetworking/azuredeploy.json'
   armParametersFile: 'LZ-ARM/DeployNetworking/azuredeploy.parameters.json'
 
@@ -154,7 +154,7 @@ steps:
     csmFile: '$(System.DefaultWorkingDirectory)/LZ-ARM/DeployNetworking/Peering/azuredeploy.json'
     csmParametersFile: '$(System.DefaultWorkingDirectory)/LZ-ARM/DeployNetworking/Peering/azuredeploy.parameters.json'
     overrideParameters:
-      -existingLocalVirtualNetworkName "vn-wot-uks-core01"
-      -existingRemoteVirtualNetworkName "vn-wot-uks-hub01" 
-      -existingRemoteVirtualNetworkResourceGroupName "rg-vnet-wotlab01"
+      -existingLocalVirtualNetworkName "vn-woo-uks-core01"
+      -existingRemoteVirtualNetworkName "vn-woo-uks-hub01" 
+      -existingRemoteVirtualNetworkResourceGroupName "rg-vnet-woolab01"
     deploymentMode: 'incremental'

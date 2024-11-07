@@ -24,7 +24,7 @@
       }
     },
     "variables": {
-      "storageAccountName": "wiseoldturtlestorage01"
+      "storageAccountName": "wiseoldOwlstorage01"
     },
     "resources": [
       {

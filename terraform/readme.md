@@ -76,7 +76,7 @@ parameters:
     - Destroy
 
 variables:
-  - group: WiseOldTurtleSP  # Variable group containing SP details
+  - group: WiseOldOwlSP  # Variable group containing SP details
   - group: terraform        # Variable group containing Terraform-related variables
   - name: directories
     value: "networking,security,policy"
@@ -191,7 +191,7 @@ stages:
               inputs:
                 provider: 'azurerm'
                 command: 'init'
-                backendServiceArm: 'wiseoldturtle-terraform-sp'
+                backendServiceArm: 'wiseoldOwl-terraform-sp'
                 backendAzureRmResourceGroupName: $(backendRGName)
                 backendAzureRmStorageAccountName: $(backendStorageAccountName)
                 backendAzureRmContainerName: $(backendContainerName)
@@ -205,7 +205,7 @@ stages:
                 provider: 'azurerm'
                 command: 'plan'
                 workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/${{ dir }}'
-                environmentServiceNameAzureRM: 'wiseoldturtle-terraform-sp'
+                environmentServiceNameAzureRM: 'wiseoldOwl-terraform-sp'
             
             - task: TerraformTaskV2@2
               displayName: 'Terraform Apply (${{ dir }})'
@@ -214,7 +214,7 @@ stages:
                 provider: 'azurerm'
                 command: 'apply'
                 workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/${{ dir }}'
-                environmentServiceNameAzureRM: 'wiseoldturtle-terraform-sp'
+                environmentServiceNameAzureRM: 'wiseoldOwl-terraform-sp'
 
   - stage: terraform_destroy
     condition: eq('${{ parameters.Action }}', 'Destroy')
@@ -234,7 +234,7 @@ stages:
               inputs:
                 provider: 'azurerm'
                 command: 'init'
-                backendServiceArm: 'wiseoldturtle-terraform-sp'
+                backendServiceArm: 'wiseoldOwl-terraform-sp'
                 backendAzureRmResourceGroupName: $(backendRGName)
                 backendAzureRmStorageAccountName: $(backendStorageAccountName)
                 backendAzureRmContainerName: $(backendContainerName)
@@ -249,7 +249,7 @@ stages:
                 command: 'destroy'
                 backendAzureRmKey: '${{ dir }}.tfstate'
                 workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/${{ dir }}'
-                environmentServiceNameAzureRM: 'wiseoldturtle-terraform-sp'
+                environmentServiceNameAzureRM: 'wiseoldOwl-terraform-sp'
 ```
 
 
