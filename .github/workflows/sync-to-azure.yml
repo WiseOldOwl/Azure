@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the GitHub repository
+      # Step 1: Check out the GitHub repository with full history
       - name: Checkout GitHub repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Fetch the full history to avoid shallow clone issues
 
       # Step 2: Configure Git user details
       - name: Set up Git user
@@ -20,7 +22,7 @@ jobs:
           git config --global user.email "imranmungul@gmail.com"
           git config --global user.name "WiseOldOwl"
 
-      # Step 3: Add Azure DevOps as a remote with PAT-based authentication
+      # Step 3: Add Azure DevOps remote and push changes
       - name: Add Azure DevOps remote and push changes
         run: |
           git remote add azure https://user:${{ secrets.AZURE_DEVOPS_PAT }}@dev.azure.com/WiseOldOwl/landing_Zone/_git/Azure
