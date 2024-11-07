@@ -18,7 +18,6 @@ jobs:
           git config --global user.email "imranmungul@gmail.com"
           git config --global user.name "WiseOldOwl"
           git remote add azure https://WiseOldOwl@dev.azure.com/WiseOldOwl/landing_Zone/_git/Azure.git
-          
           git push azure main -f
         env:
-          AZURE_DEVOPS_PAT: ${{ secrets.AZURE_DEVOPS_PAT }}  # Secret PAT added in GitHub secrets
+          AZURE_DEVOPS_PAT: ${{ secrets.AZURE_DEVOPS_PAT }}
