@@ -131,7 +131,7 @@ stages:
               inputs:
                 provider: 'azurerm'
                 command: 'init'
-                backendServiceArm: 'WiseOldOwlSP'
+                backendServiceArm: 'Azure'
                 backendAzureRmResourceGroupName: $(backendRGName)
                 backendAzureRmStorageAccountName: $(backendStorageAccountName)
                 backendAzureRmContainerName: $(backendContainerName)
@@ -145,7 +145,7 @@ stages:
                 provider: 'azurerm'
                 command: 'plan'
                 workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/${{ dir }}'
-                environmentServiceNameAzureRM: 'WiseOldOwlSP'
+                environmentServiceNameAzureRM: 'Azure'
             
             - task: TerraformTaskV2@2
               displayName: 'Terraform Apply (${{ dir }})'
@@ -154,7 +154,7 @@ stages:
                 provider: 'azurerm'
                 command: 'apply'
                 workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/${{ dir }}'
-                environmentServiceNameAzureRM: 'WiseOldOwlSP'
+                environmentServiceNameAzureRM: 'Azure'
 
   - stage: terraform_destroy
     condition: eq('${{ parameters.Action }}', 'Destroy')
@@ -174,7 +174,7 @@ stages:
               inputs:
                 provider: 'azurerm'
                 command: 'init'
-                backendServiceArm: 'WiseOldOwlSP'
+                backendServiceArm: 'Azure'
                 backendAzureRmResourceGroupName: $(backendRGName)
                 backendAzureRmStorageAccountName: $(backendStorageAccountName)
                 backendAzureRmContainerName: $(backendContainerName)
@@ -189,4 +189,4 @@ stages:
                 command: 'destroy'
                 backendAzureRmKey: '${{ dir }}.tfstate'
                 workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/${{ dir }}'
-                environmentServiceNameAzureRM: 'WiseOldOwlSP'
+                environmentServiceNameAzureRM: 'Azure'
