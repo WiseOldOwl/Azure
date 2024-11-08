@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "Resource group for the networking infrastructure"
   type        = string
-  default     ="rg-vnet-woolab01"
+  default     ="rg-vnet-woolab"
 }
 
 variable "location" {

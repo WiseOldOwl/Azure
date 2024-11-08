@@ -1,6 +1,6 @@
 vnetloop = [
   {
-    vnet_name     = "vn-fe-woolab01"
+    vnet_name     = "vn-fe-woolab"
     address_space = ["10.60.16.0/24"]
     subnets = [
       {
@@ -22,7 +22,7 @@ vnetloop = [
     ]
   },
   {
-    vnet_name     = "vn-prod-woolab01"
+    vnet_name     = "vn-prod-woolab"
     address_space = ["10.60.32.0/24"]
     subnets = [
       {
@@ -44,7 +44,7 @@ vnetloop = [
     ]
   },
   {
-    vnet_name     = "vn-preprod-woolab01"
+    vnet_name     = "vn-preprod-woolab"
     address_space = ["10.60.64.0/24"]
     subnets = [
       {
