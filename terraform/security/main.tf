@@ -17,7 +17,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg-nsg-woolab01" {
+resource "azurerm_resource_group" "rg-nsg-woolab" {
   name     = var.resource_group_name
   location = var.location
 }
@@ -29,7 +29,7 @@ resource "azurerm_network_security_group" "frontend_nsg" {
 
   # added dependency on the resource group so it does not crash
   depends_on = [
-    azurerm_resource_group.rg-nsg-woolab01
+    azurerm_resource_group.rg-nsg-woolab
   ]
 
   # Deny all inbound traffic except VNET internal traffic

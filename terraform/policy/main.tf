@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
       resource_group_name  = "tfstate"
-      storage_account_name = "terraformstateprojwoo1"
+      storage_account_name = "terraformstateprojwoo"
       container_name       = "tfstate"
       key                  = "policy.tfstate"
   }
@@ -17,13 +17,13 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg-policy-woolab01" {
-  name     = "rg-policy-woolab01"
+resource "azurerm_resource_group" "rg-policy-woolab" {
+  name     = "rg-policy-woolab"
   location = "UK South"
 }
 
-resource "azurerm_resource_group" "rg-vmpool-woolab01" {
-  name     = "rg-vmpool-woolab01"
+resource "azurerm_resource_group" "rg-vmpool-woolab" {
+  name     = "rg-vmpool-woolab"
   location = "UK South"
 }
 
@@ -65,6 +65,6 @@ POLICY_RULE
 
 resource "azurerm_resource_group_policy_assignment" "platform_vm_size_policy" {
   name                 = "platform-vm-size-policy"
-  resource_group_id    = azurerm_resource_group.rg-policy-woolab01.id
+  resource_group_id    = azurerm_resource_group.rg-policy-woolab.id
   policy_definition_id = azurerm_policy_definition.vm_size_policy.id
 }

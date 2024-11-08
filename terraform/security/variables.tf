@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "Resource group for security resources"
   type        = string
-  default = "rg-nsg-woolab01"
+  default = "rg-nsg-woolab"
 }
 
 variable "location" {
